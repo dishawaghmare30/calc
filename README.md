@@ -6,7 +6,7 @@ A modern, stylish calculator built using **HTML, CSS, and JavaScript** with a be
 
 ## 🚀 Live Demo
 
-👉 https://your-username.github.io/premium-calculator/
+👉 https://dishawaghmare30.github.io/calc/
 
 ---
 
