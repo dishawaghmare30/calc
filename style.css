@@ -86,6 +86,12 @@ button {
 
 .footer {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;              /* more space from bottom */
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;              /* ensures proper centering on mobile */
+  pointer-events: none;     /* prevents overlap issues */
 }
