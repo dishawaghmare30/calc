@@ -1,6 +1,6 @@
 # 🧮 Premium Glass Calculator
 
-A modern, stylish calculator built using **HTML, CSS, and JavaScript** with a beautiful glassmorphism UI and smooth animations.
+A modern, feature-rich calculator built using **HTML, CSS, and JavaScript** with a beautiful glassmorphism design and smooth user experience.
 
 ---
 
@@ -13,19 +13,20 @@ A modern, stylish calculator built using **HTML, CSS, and JavaScript** with a be
 ## ✨ Features
 
 * 🧊 Glassmorphism UI design
-* 🎨 Animated gradient background blobs
-* ⚡ Real-time calculation
-* ⌫ Delete and Clear functions
-* 💯 Percentage support
-* 📱 Responsive design (works on mobile)
+* 🌙 Dark / Light mode toggle
+* 📜 Calculation history
+* 🔄 Reset & delete functions
+* ⌨️ Keyboard support
+* 💎 Premium fonts (Poppins + Orbitron)
+* 📱 Fully responsive design
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **HTML** – Structure
-* **CSS** – Styling & animations
-* **JavaScript** – Logic & calculations
+* **HTML5** – Structure
+* **CSS3** – Styling & animations
+* **JavaScript (Vanilla)** – Logic & functionality
 
 ---
 
@@ -37,10 +38,12 @@ A modern, stylish calculator built using **HTML, CSS, and JavaScript** with a be
 
 ## 📂 Project Structure
 
-```
-premium-calculator/
+```bash
+calculator/
 │
 ├── index.html
+├── style.css
+├── script.js
 └── README.md
 ```
 
@@ -50,14 +53,14 @@ premium-calculator/
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/premium-calculator.git
-   ```
+```bash
+git clone https://github.com/your-username/calculator.git
+```
 
-2. Open the project folder
+2. Open the folder
 
-3. Double-click `index.html`
-   OR open with Live Server
+3. Run `index.html` in your browser
+   OR use Live Server
 
 ---
 
@@ -65,35 +68,36 @@ premium-calculator/
 
 This project is deployed using **GitHub Pages**.
 
-To deploy:
+Steps:
 
 1. Go to repository **Settings**
 2. Open **Pages**
 3. Select branch: `main`
-4. Save and get your live link
+4. Save → get live link
 
 ---
 
 ## 🧠 How It Works
 
-* User clicks buttons → values are appended
-* Expression is stored in a variable
+* User inputs numbers via buttons or keyboard
+* Expression is stored and displayed
 * On `=` → expression is evaluated using JavaScript
-* Result is displayed instantly
+* Result is shown instantly
+* History stores past calculations
 
 ---
 
 ## ⚠️ Note
 
-* Uses `eval()` for calculations (simple but not recommended for production apps)
-* Best suited for learning and portfolio projects
+* Uses `eval()` for calculations
+* Suitable for learning and portfolio projects
 
 ---
 
-## 👨‍💻 Author
+## 👩‍💻 Author
 
-**Soham Patil**
-🔗 https://github.com/your-username
+**Disha Waghmare**
+🔗 https://github.com/dishawaghmare30
 
 ---
 
@@ -107,13 +111,13 @@ If you like this project:
 
 ---
 
-## 📌 Future Improvements
+## 🚀 Future Improvements
 
 * Scientific calculator features
-* Keyboard input support
-* Dark/Light mode toggle
-* History tracking
+* Save history in local storage
+* Animations & sound effects
+* Mobile app version
 
 ---
 
-### 💡 Made with passion for learning & building
+### 💡 Built with creativity and passion 💙
