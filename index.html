@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Premium Glass Calculator</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #d9a7ff, #8ec5fc, #c8f7a6);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.8;
+  animation: float 6s infinite alternate ease-in-out;
+}
+
+.b1 {
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(#5b35c9, #f4b3a4);
+  top: 18%;
+  left: 18%;
+}
+
+.b2 {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(#8ac6ff, #eaff9b);
+  right: 23%;
+  top: 35%;
+}
+
+.b3 {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(#ffffff, #4d36a8);
+  right: 28%;
+  bottom: 6%;
+}
+
+.b4 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(#ffffff, #9ecbff);
+  left: 28%;
+  bottom: 12%;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-25px); }
+}
+
+.calculator {
+  width: 330px;
+  padding: 35px 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 80px rgba(40, 40, 90, 0.35);
+  z-index: 10;
+  position: relative;
+}
+
+.calculator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.35);
+  filter: blur(35px);
+  border-radius: 50%;
+}
+
+.menu {
+  color: rgba(70, 70, 120, 0.6);
+  font-size: 13px;
+  margin-bottom: 75px;
+}
+
+.screen {
+  text-align: right;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.small {
+  font-size: 17px;
+  opacity: 0.45;
+  margin-bottom: 12px;
+}
+
+.expression {
+  font-size: 24px;
+  opacity: 0.65;
+  margin-bottom: 12px;
+}
+
+.result {
+  font-size: 52px;
+  font-weight: 700;
+  text-shadow: 0 4px 20px rgba(255,255,255,0.5);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+button {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  background: rgba(70, 70, 150, 0.22);
+  box-shadow:
+    inset 2px 2px 8px rgba(255,255,255,0.25),
+    inset -4px -4px 12px rgba(40,40,100,0.15),
+    0 8px 18px rgba(50,50,100,0.18);
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+button:active {
+  transform: scale(0.93);
+}
+
+.operator {
+  background: rgba(45, 45, 130, 0.35);
+}
+
+.equal {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 25px rgba(255,255,255,0.5);
+}
+
+.footer {
+  position: absolute;
+  bottom: 18px;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+@media(max-width: 420px) {
+  .calculator {
+    width: 90%;
+  }
+
+  button {
+    width: 55px;
+    height: 55px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+<div class="blob b4"></div>
+
+<div class="calculator">
+  <div class="menu">☰<br>MENU</div>
+
+  <div class="screen">
+    <div class="small" id="old">Premium Calculator</div>
+    <div class="expression" id="expression">0</div>
+    <div class="result" id="result">0</div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="clearAll()">C</button>
+    <button onclick="appendValue('%')">%</button>
+    <button onclick="deleteLast()">⌫</button>
+    <button class="operator" onclick="appendValue('/')">÷</button>
+
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button class="operator" onclick="appendValue('*')">×</button>
+
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button class="operator" onclick="appendValue('-')">−</button>
+
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button class="operator" onclick="appendValue('+')">+</button>
+
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('00')">00</button>
+    <button onclick="appendValue('.')">.</button>
+    <button class="equal" onclick="calculate()">=</button>
+  </div>
+</div>
+
+<div class="footer">Made by Piyush</div>
+
+<script>
+let expression = "";
+
+function appendValue(value) {
+  expression += value;
+  document.getElementById("expression").innerText = expression;
+}
+
+function clearAll() {
+  expression = "";
+  document.getElementById("expression").innerText = "0";
+  document.getElementById("result").innerText = "0";
+}
+
+function deleteLast() {
+  expression = expression.slice(0, -1);
+  document.getElementById("expression").innerText = expression || "0";
+}
+
+function calculate() {
+  try {
+    let finalExpression = expression.replace(/%/g, "/100");
+    let answer = eval(finalExpression);
+
+    if (answer === Infinity || answer === -Infinity) {
+      document.getElementById("result").innerText = "Error";
+    } else {
+      document.getElementById("result").innerText = answer;
+    }
+  } catch {
+    document.getElementById("result").innerText = "Error";
+  }
+}
+</script>
+
+</body>
+</html>
