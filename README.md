@@ -31,7 +31,7 @@ A modern, stylish calculator built using **HTML, CSS, and JavaScript** with a be
 
 ## 📸 Preview
 
-![Calculator Preview](https://via.placeholder.com/600x400?text=Calculator+Preview)
+![Calculator Preview](./screenshot.png)
 
 ---
 
