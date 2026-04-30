@@ -2,11 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  body {
-  font-family: "Poppins", sans-serif;
 }
 
 body {
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -27,6 +26,7 @@ body.dark {
   background: rgba(255,255,255,0.18);
   backdrop-filter: blur(25px);
   border: 1px solid rgba(255,255,255,0.35);
+  position: relative; /* IMPORTANT for footer */
 }
 
 /* MENU */
@@ -84,14 +84,23 @@ button {
   background: rgba(70,70,150,0.22);
 }
 
+/* FOOTER FIX */
 .footer {
   position: absolute;
-  bottom: 20px;              /* more space from bottom */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
   font-size: 14px;
   text-align: center;
-  width: 100%;              /* ensures proper centering on mobile */
-  pointer-events: none;     /* prevents overlap issues */
+  width: 100%;
+  pointer-events: none;
+}
+
+/* MOBILE FIX */
+@media (max-width: 420px) {
+  .footer {
+    bottom: 30px;
+    font-size: 13px;
+  }
 }
